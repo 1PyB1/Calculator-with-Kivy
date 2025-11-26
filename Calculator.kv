@@ -1,0 +1,370 @@
+#:import utils kivy.utils 
+<MyLayout>
+    result:result
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width , root.height
+
+        TextInput:
+            id:result
+            background_color: utils.get_color_from_hex('#262727ff')
+            foreground_color: (1,1,1,1)
+            text: "0"
+            font_size: 40
+            halign: "right"
+            valign: "middle"
+            size_hint: (1, 0.15)
+            multiline: False
+            cursor_blink: True
+            on_text: root.on_result_text(self.text)
+        GridLayout:
+            cols: 4
+            rows: 6
+            
+            Button:
+                text: "%"
+                font_size: 22
+                size_hint: (0.2, 0.2)
+                background_normal: ""
+                background_color:
+                    utils.get_color_from_hex('#343637ff')
+                canvas.before:
+                    Color:
+                        rgba: 0, 0, 0, 1
+                    Line:
+                        width: 1.5
+                        rectangle: self.x, self.y, self.width, self.height
+                on_press: root.percentage()
+            Button:
+                text: "CE"
+                font_size: 22
+                size_hint: (0.2, 0.2)
+                background_normal: ""
+                background_color:
+                    utils.get_color_from_hex('#343637ff')
+                canvas.before:
+                    Color:
+                        rgba: 0, 0, 0, 1
+                    Line:
+                        width: 1.5
+                        rectangle: self.x, self.y, self.width, self.height
+                on_press: root.CE()
+            Button:
+                text: "C"
+                font_size: 22
+                size_hint: (0.2, 0.2)
+                background_normal: ""
+                background_color:
+                    utils.get_color_from_hex('#343637ff')
+                canvas.before:
+                    Color:
+                        rgba: 0, 0, 0, 1
+                    Line:
+                        width: 1.5
+                        rectangle: self.x, self.y, self.width, self.height
+                on_press: root.clear()
+            Button:
+                text: "⌫"
+                font_name: "fonts/DejaVuSans.ttf"
+                font_size: 22
+                size_hint: (0.2, 0.2)
+                background_normal: ""
+                background_color:
+                    utils.get_color_from_hex('#343637ff')
+                canvas.before:
+                    Color:
+                        rgba: 0, 0, 0, 1
+                    Line:
+                        width: 1.5
+                        rectangle: self.x, self.y, self.width, self.height
+                on_press: root.delete_last_number()
+
+            Button:
+                text: "1/x"
+                font_size: 22
+                size_hint: (0.2, 0.2)
+                background_normal: ""
+                background_color:
+                    utils.get_color_from_hex('#343637ff')
+                canvas.before:
+                    Color:
+                        rgba: 0, 0, 0, 1
+                    Line:
+                        width: 1.5
+                        rectangle: self.x, self.y, self.width, self.height
+                on_press: root.onedividedbyx()
+            Button:
+                text: "x²"
+                font_size: 22
+                size_hint: (0.2, 0.2)
+                background_normal: ""
+                background_color:
+                    utils.get_color_from_hex('#343637ff')
+                canvas.before:
+                    Color:
+                        rgba: 0, 0, 0, 1
+                    Line:
+                        width: 1.5
+                        rectangle: self.x, self.y, self.width, self.height
+                on_press: root.square()
+            Button:
+                text: "√x"
+                font_size: 22
+                size_hint: (0.2, 0.2)
+                background_normal: ""
+                background_color:
+                    utils.get_color_from_hex('#343637ff')
+                canvas.before:
+                    Color:
+                        rgba: 0, 0, 0, 1
+                    Line:
+                        width: 1.5
+                        rectangle: self.x, self.y, self.width, self.height
+                on_press: root.squareroot()
+            Button:
+                text: "÷"
+                font_size: 22
+                size_hint: (0.2, 0.2)
+                background_normal: ""
+                background_color:
+                    utils.get_color_from_hex('#343637ff')
+                canvas.before:
+                    Color:
+                        rgba: 0, 0, 0, 1
+                    Line:
+                        width: 1.5
+                        rectangle: self.x, self.y, self.width, self.height
+                on_press: root.divide()
+            
+            Button:
+                text: "7"
+                font_size: 22
+                size_hint: (0.2, 0.2)
+                background_normal: ""
+                background_color:
+                    utils.get_color_from_hex('#505053ff')
+                canvas.before:
+                    Color:
+                        rgba: 0, 0, 0, 1
+                    Line:
+                        width: 1.5
+                        rectangle: self.x, self.y, self.width, self.height
+                on_press: root.press_number("7")
+               
+            Button:
+                text: "8"
+                font_size: 22
+                size_hint: (0.2, 0.2)
+                background_normal: ""
+                background_color:
+                    utils.get_color_from_hex('#505053ff')
+                canvas.before:
+                    Color:
+                        rgba: 0, 0, 0, 1
+                    Line:
+                        width: 1.5
+                        rectangle: self.x, self.y, self.width, self.height
+                on_press: root.press_number("8")
+            Button:
+                text: "9"
+                font_size: 22
+                size_hint: (0.2, 0.2)
+                background_normal: ""
+                background_color:
+                    utils.get_color_from_hex('#505053ff')
+                canvas.before:
+                    Color:
+                        rgba: 0, 0, 0, 1
+                    Line:
+                        width: 1.5
+                        rectangle: self.x, self.y, self.width, self.height
+                on_press: root.press_number("9")
+            Button:
+                text: "x"
+                font_size: 22
+                size_hint: (0.2, 0.2)
+                background_normal: ""
+                background_color:
+                    utils.get_color_from_hex('#343637ff')
+                canvas.before:
+                    Color:
+                        rgba: 0, 0, 0, 1
+                    Line:
+                        width: 1.5
+                        rectangle: self.x, self.y, self.width, self.height
+                on_press: root.multiply()
+            
+            Button:
+                text: "4"
+                font_size: 22
+                size_hint: (0.2, 0.2)
+                background_normal: ""
+                background_color:
+                    utils.get_color_from_hex('#505053ff')
+                canvas.before:
+                    Color:
+                        rgba: 0, 0, 0, 1
+                    Line:
+                        width: 1.5
+                        rectangle: self.x, self.y, self.width, self.height
+                on_press: root.press_number("4")
+            Button:
+                text: "5"
+                font_size: 22
+                size_hint: (0.2, 0.2)
+                background_normal: ""
+                background_color:
+                    utils.get_color_from_hex('#505053ff')
+                canvas.before:
+                    Color:
+                        rgba: 0, 0, 0, 1
+                    Line:
+                        width: 1.5
+                        rectangle: self.x, self.y, self.width, self.height
+                on_press: root.press_number("5")
+            Button:
+                text: "6"
+                font_size: 22
+                size_hint: (0.2, 0.2)
+                background_normal: ""
+                background_color:
+                    utils.get_color_from_hex('#505053ff')
+                canvas.before:
+                    Color:
+                        rgba: 0, 0, 0, 1
+                    Line:
+                        width: 1.5
+                        rectangle: self.x, self.y, self.width, self.height
+                on_press: root.press_number("6")
+            Button:
+                text: "-"
+                font_size: 22
+                size_hint: (0.2, 0.2)
+                background_normal: ""
+                background_color:
+                    utils.get_color_from_hex('#343637ff')
+                canvas.before:
+                    Color:
+                        rgba: 0, 0, 0, 1
+                    Line:
+                        width: 1.5
+                        rectangle: self.x, self.y, self.width, self.height
+                on_press: root.minus()
+            
+            Button:
+                text: "3"
+                font_size: 22
+                size_hint: (0.2, 0.2)
+                background_normal: ""
+                background_color:
+                    utils.get_color_from_hex('#505053ff')
+                canvas.before:
+                    Color:
+                        rgba: 0, 0, 0, 1
+                    Line:
+                        width: 1.5
+                        rectangle: self.x, self.y, self.width, self.height
+                on_press: root.press_number("3")
+            Button:
+                text: "2"
+                font_size: 22
+                size_hint: (0.2, 0.2)
+                background_normal: ""
+                background_color:
+                    utils.get_color_from_hex('#505053ff')
+                canvas.before:
+                    Color:
+                        rgba: 0, 0, 0, 1
+                    Line:
+                        width: 1.5
+                        rectangle: self.x, self.y, self.width, self.height
+                on_press: root.press_number("2")
+            Button:
+                text: "1"
+                font_size: 22
+                size_hint: (0.2, 0.2)
+                background_normal: ""
+                background_color:
+                    utils.get_color_from_hex('#505053ff')
+                canvas.before:
+                    Color:
+                        rgba: 0, 0, 0, 1
+                    Line:
+                        width: 1.5
+                        rectangle: self.x, self.y, self.width, self.height
+                on_press: root.press_number("1")
+            Button:
+                text: "+"
+                font_size: 22
+                size_hint: (0.2, 0.2)
+                background_normal: ""
+                background_color:
+                    utils.get_color_from_hex('#343637ff')
+                canvas.before:
+                    Color:
+                        rgba: 0, 0, 0, 1
+                    Line:
+                        width: 1.5
+                        rectangle: self.x, self.y, self.width, self.height
+                on_press: root.plus()
+            
+            Button:
+                text: "±"
+                font_size: 22
+                size_hint: (0.2, 0.2)
+                background_normal: ""
+                background_color:
+                    utils.get_color_from_hex('#505053ff')
+                canvas.before:
+                    Color:
+                        rgba: 0, 0, 0, 1
+                    Line:
+                        width: 1.5
+                        rectangle: self.x, self.y, self.width, self.height
+                on_press: root.change_sign()
+            Button:
+                text: "0"
+                font_size: 22
+                size_hint: (0.2, 0.2)
+                background_normal: ""
+                background_color:
+                    utils.get_color_from_hex('#505053ff')
+                canvas.before:
+                    Color:
+                        rgba: 0, 0, 0, 1
+                    Line:
+                        width: 1.5
+                        rectangle: self.x, self.y, self.width, self.height
+                on_press: root.press_number("0")
+            Button:
+                text: "."
+                font_size: 22
+                size_hint: (0.2, 0.2)
+                background_normal: ""
+                background_color:
+                    utils.get_color_from_hex('#505053ff')
+                canvas.before:
+                    Color:
+                        rgba: 0, 0, 0, 1
+                    Line:
+                        width: 1.5
+                        rectangle: self.x, self.y, self.width, self.height
+                on_press: root.dot()
+            Button:
+                text: "="
+                font_size: 22
+                size_hint: (0.2, 0.2)
+                background_normal: ""
+                background_color:
+                    utils.get_color_from_hex('#006699ff')
+                canvas.before:
+                    Color:
+                        rgba: 0, 0, 0, 1
+                    Line:
+                        width: 1.5
+                        rectangle: self.x, self.y, self.width, self.height
+                on_press: root.equal()
+
+    
+
+            
